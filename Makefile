@@ -3,36 +3,39 @@ SRCS =	main.c 		\
 		checkpos.c	\
 		draw.c		\
 		drawmap.c	\
-		moves.c			
+		moves.c		\
 
 NAME = so_long
 
 
-#SRCSB = 	
+LIBFT = ./libft/libft.a	
+GNL = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
 OBJSB = $(SRCSB:.c=.o)
 
  CC_FLAGS = 
+all: $(NAME)
 
 %.o : %.c so_long.h
 	cc $(CC_FLAGS) -c $<
 
-$(NAME): $(OBJS)
-	make -C ./libft/
-	cc $(OBJS) ./libft/libft.a -lmlx -framework OpenGL -framework AppKit 
-
-all: $(NAME)
+$(NAME): $(OBJS) $(GNL)
+	 cd ./libft && make && cd ..
+	 cc $(OBJS) $(LIBFT) $(GNL) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	 
 
 # bonus: $(OBJS) $(OBJSB)
 # 	ar rc $(NAME) $(OBJSB) $(OBJS)
 
 clean:
-	rm -f $(OBJS) $(OBJSB)
+	cd ./libft && make clean && cd ..
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	cd ./libft && make fclean && cd ..
+	rm -f $(NAME) $(LIBFT)
+	
 
 re: fclean all
 

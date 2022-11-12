@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:35:56 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/12 04:17:25 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/12 21:03:19 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		read_file(int fd, int *readed, t_list **buffer);
 void	add_tolist(char *content, t_list **buffer, int readed);
 char	*extract_line(t_list *buffer);
 void	allocline(t_list *buffer, char **line);
-int		ft_check(t_list *buffer);
+int		ft_check1(t_list *buffer);
 void	make_remain(t_list **head);
 
 #endif

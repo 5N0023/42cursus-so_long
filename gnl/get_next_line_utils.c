@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:35:41 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/12 15:27:06 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/12 21:03:14 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	make_remain(t_list **buffer)
 	*buffer = remain_node;
 }
 
-int	ft_check(t_list *buffer)
+int	ft_check1(t_list *buffer)
 {
 	t_list	*last;
 	size_t	i;

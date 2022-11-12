@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:34:16 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/12 20:51:13 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/12 21:22:34 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	read_file(int fd, int *readed, t_list **buffer)
 	int		end;
 
 	end = 1;
-	while (ft_check(*buffer) != 1 && *readed > 0)
+	while (ft_check1(*buffer) != 1 && *readed > 0)
 	{
 		content = malloc((BUFFER_SIZE + 1) * sizeof(char));
 		if (!content)

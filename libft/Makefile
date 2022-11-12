@@ -6,7 +6,7 @@
 #    By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 20:07:38 by mlektaib          #+#    #+#              #
-#    Updated: 2022/11/12 17:53:56 by mlektaib         ###   ########.fr        #
+#    Updated: 2022/11/12 21:04:52 by mlektaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,10 +45,7 @@ SRCS = ft_isalpha.c 	\
 	   ft_putendl_fd.c	\
 	   ft_putnbr_fd.c	\
 	   ft_strchr.c		\
-
-NAME = libft.a
-
-SRCSB = ft_lstnew.c			\
+	   ft_lstnew.c			\
 		ft_lstadd_front.c	\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
@@ -56,11 +53,12 @@ SRCSB = ft_lstnew.c			\
 		ft_lstdelone.c		\
 		ft_lstclear.c 		\
 		ft_lstiter.c		\
-		ft_lstmap.c			
+		ft_lstmap.c		
+
+NAME = libft.a
+
 
 OBJS = $(SRCS:.c=.o)
-
-OBJSB = $(SRCSB:.c=.o)
 
 CC_FLAGS = -Wall -Wextra -Werror
 
@@ -72,11 +70,8 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-bonus: $(OBJS) $(OBJSB)
-	ar rc $(NAME) $(OBJSB) $(OBJS)
-
 clean:
-	rm -f $(OBJS) $(OBJSB)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
