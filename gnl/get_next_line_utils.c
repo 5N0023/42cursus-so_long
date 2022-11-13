@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:35:41 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/12 21:03:14 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/12 23:40:18 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	make_remain(t_list **buffer)
 	while (last->content[i])
 		remain_node->content[j++] = last->content[i++];
 	remain_node->content[j] = '\0';
-	ft_lstclear(buffer,free);
+	ft_lstclear(buffer, free);
 	*buffer = remain_node;
 }
 

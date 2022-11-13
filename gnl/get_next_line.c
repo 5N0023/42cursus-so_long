@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:34:16 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/12 21:22:34 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/12 23:41:19 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*get_next_line(int fd)
 	if (line && n != 0)
 		make_remain(&buffer);
 	if (n == 0)
-		ft_lstclear(&buffer,free);
+		ft_lstclear(&buffer, free);
 	return (line);
 }
 

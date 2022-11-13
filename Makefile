@@ -4,6 +4,7 @@ SRCS =	main.c 		\
 		draw.c		\
 		drawmap.c	\
 		moves.c		\
+		checkpath.c
 
 NAME = so_long
 
@@ -21,7 +22,7 @@ all: $(NAME)
 %.o : %.c so_long.h
 	cc $(CC_FLAGS) -c $<
 
-$(NAME): $(OBJS) $(GNL)
+$(NAME): $(OBJS)
 	 cd ./libft && make && cd ..
 	 cc $(OBJS) $(LIBFT) $(GNL) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	 
 

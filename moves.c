@@ -1,97 +1,137 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
+/*   Updated: 2022/11/12 23:54:40 by mlektaib         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void ft_moveright(t_vars *vars)
+void	ft_moveright(t_vars *vars)
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 
-	if (ft_checkwall(vars->x + 50,vars->y,vars))
-		{
+	if (ft_checkwall(vars->x + 50, vars->y, vars))
+	{
 		vars->x += 50;
-		vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish right.xpm",&a,&b);
-		mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
-		ft_cleanlastpos(vars->x-50,vars->y,vars);
-		}
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fishr.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+			vars->img,vars->x, vars->y);
+		ft_cleanlastpos(vars->x-50, vars->y, vars);
+		vars->moves++;
+		ft_showmoves(vars);
+	}
 	else 
 	{
-			ft_cleanlastpos(vars->x,vars->y,vars);
-			vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish right.xpm",&a,&b);
-			mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
+		ft_cleanlastpos(vars->x, vars->y, vars);
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fishr.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img, vars->x, vars->y);
 	}
 }
 
-void ft_moveleft(t_vars *vars)
+void	ft_moveleft(t_vars *vars)
 {
-	int a;
-	int b;
-	if (ft_checkwall(vars->x - 50,vars->y,vars))
+	int	a;
+	int	b;
+
+	if (ft_checkwall(vars->x - 50, vars->y, vars))
 	{
 		vars->x -= 50;
-		vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish left.xpm",&a,&b);
-		mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
-		ft_cleanlastpos(vars->x+50,vars->y,vars);
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fish left.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img, vars->x, vars->y);
+		ft_cleanlastpos(vars->x+50, vars->y, vars);
+		vars->moves++;
+		ft_showmoves(vars);
 	}
 	else 
 	{
-			ft_cleanlastpos(vars->x,vars->y,vars);
-			vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish left.xpm",&a,&b);
-			mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
+			ft_cleanlastpos(vars->x, vars->y, vars);
+			vars->img = mlx_xpm_file_to_image(vars->mlx,
+					"./img/fish left.xpm", &a, &b);
+			mlx_put_image_to_window(vars->mlx, vars->win,
+					vars->img, vars->x, vars->y);
 	}
 }
-void ft_moveup(t_vars *vars)
-{
-	int a;
-	int b;
 
-	if(ft_checkwall(vars->x,vars->y - 50,vars))
-		{
-			vars->y -= 50;
-			vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish up.xpm",&a,&b);
-			mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
-			ft_cleanlastpos(vars->x,vars->y+50,vars);
+void	ft_moveup(t_vars *vars)
+{
+	int	a;
+	int	b;
+
+	if (ft_checkwall(vars->x, vars->y - 50, vars))
+	{
+		vars->y -= 50;
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fish up.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img, vars->x, vars->y);
+		ft_cleanlastpos(vars->x, vars->y+50, vars);
+		vars->moves++;
+		ft_showmoves(vars);
 		}
 	else 
 	{
-			ft_cleanlastpos(vars->x,vars->y,vars);
-			vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish up.xpm",&a,&b);
-			mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
+		ft_cleanlastpos(vars->x, vars->y, vars);
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fish up.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img, vars->x, vars->y);
 	}
 }
-void ft_movedown(t_vars *vars)
-{
-	int a;
-	int b;
 
-	if (ft_checkwall(vars->x,vars->y + 50,vars))
-		{
-			vars->y += 50;
-			vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish down.xpm",&a,&b);
-			mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
-			ft_cleanlastpos(vars->x,vars->y-50,vars);
-		}
+void	ft_movedown(t_vars *vars)
+{
+	int	a;
+	int	b;
+
+	if (ft_checkwall(vars->x, vars->y + 50, vars))
+	{
+		vars->y += 50;
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fish down.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img, vars->x, vars->y);
+		ft_cleanlastpos(vars->x, vars->y-50, vars);
+		vars->moves++;
+		ft_showmoves(vars);
+	}
 	else 
 	{
-			ft_cleanlastpos(vars->x,vars->y,vars);
-			vars->img = mlx_xpm_file_to_image(vars->mlx,"./img/fish down.xpm",&a,&b);
-			mlx_put_image_to_window(vars->mlx,vars->win,vars->img,vars->x,vars->y);
+		ft_cleanlastpos(vars->x, vars->y, vars);
+		vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fish down.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+			vars->img, vars->x, vars->y);
 	}
 }
+
 int	key_hook(int keycode, t_vars *vars)
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 
-	if(keycode == 13)
+	if (keycode == 13)
 		ft_moveup(vars);
-	 if(keycode == 1)
-	 	ft_movedown(vars);
-	if(keycode == 2)
+	if (keycode == 1)
+		ft_movedown(vars);
+	if (keycode == 2)
 		ft_moveright(vars);
-	if(keycode == 0)
+	if (keycode == 0)
 		ft_moveleft(vars);
-	if(keycode == 53)
+	if (keycode == 53)
 	{
-		mlx_clear_window(vars->mlx,vars->win);
+		mlx_clear_window(vars->mlx, vars->win);
 		free(vars->map);
 		exit(1);
 	}
