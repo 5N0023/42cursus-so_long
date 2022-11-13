@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:25:58 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/10/24 18:03:18 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 00:33:45 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	char *nbr;
+	nbr = ft_itoa(n);
+	ft_putstr_fd(nbr, fd);
+	free(nbr);
 }

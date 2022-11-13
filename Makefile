@@ -4,7 +4,8 @@ SRCS =	main.c 		\
 		draw.c		\
 		drawmap.c	\
 		moves.c		\
-		checkpath.c
+		checkpath.c	\
+		checkwin.c
 
 NAME = so_long
 

@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/13 01:35:08 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/13 22:45:46 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int		key_hook(int keycode, t_vars *vars);
 void	ft_checkimg(t_vars *vars);
 void	ft_showmoves(t_vars *vars);
 void	ft_showmoves(t_vars *vars);
-int		ft_checkpath(t_vars *vars,int x,int y,int cltv);
+int		ft_checkpath(t_vars *vars);
+int	ft_checkwin(t_vars *vars);
 
 #endif
