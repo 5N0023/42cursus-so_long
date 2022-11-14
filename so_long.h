@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/13 22:45:46 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 04:26:01 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_vars {
 	char	*map;
 	int		colcount;
 	int		door;
+	int		vision;
 }				t_vars;
 
 int		ft_checkmap1(const char *map, t_vars *vars, int fd);
@@ -56,6 +57,7 @@ void	ft_checkimg(t_vars *vars);
 void	ft_showmoves(t_vars *vars);
 void	ft_showmoves(t_vars *vars);
 int		ft_checkpath(t_vars *vars);
-int	ft_checkwin(t_vars *vars);
+int		ft_checkwin(t_vars *vars);
+void	ft_draweatanim(t_vars *vars);
 
 #endif
