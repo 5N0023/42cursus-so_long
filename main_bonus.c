@@ -6,11 +6,11 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:37:47 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 15:23:03 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:42:45 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	main(int arg, char *map[])
 {

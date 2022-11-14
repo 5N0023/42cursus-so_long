@@ -6,11 +6,11 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:21:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 15:23:15 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:43:18 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	drawopendoor(t_vars *vars)
 {

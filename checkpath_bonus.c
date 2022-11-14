@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 //(y * vars->w) + (x % vars->w) / 50
 
 int	ft_checkwall2(int x, int y,t_vars *vars,char *map)
@@ -9,7 +9,7 @@ int	ft_checkwall2(int x, int y,t_vars *vars,char *map)
 
 	i = 0;
 	n = ((y/50) * (vars->w/50)) + (x / 50);
-	if (map[n] == '1')
+	if (map[n] == '1' || map[n] == 'B')
 				return (0);
 	return (1);
 }

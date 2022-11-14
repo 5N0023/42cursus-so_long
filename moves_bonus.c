@@ -6,11 +6,11 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 15:22:54 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 21:59:43 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_moveright(t_vars *vars)
 {
@@ -125,7 +125,7 @@ int	key_hook(int keycode, t_vars *vars)
 	int	a;
 	int	b;
 
-	if (ft_checkwin(vars) == 1)
+	if ( ft_checkwin(vars) == 1 && ft_checklose(vars) == 1)
 	{
 		if (keycode == 13)
 			ft_moveup(vars);
@@ -136,6 +136,7 @@ int	key_hook(int keycode, t_vars *vars)
 		if (keycode == 0)
 			ft_moveleft(vars);
 		ft_checkcollective(vars);
+		ft_checklose(vars);
 	}
 	if (keycode == 53)
 		{

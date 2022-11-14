@@ -6,11 +6,11 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:02:41 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 15:23:32 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:55:44 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 char	*ft_strjoin1(char *map, char *line, int w)
 {
@@ -62,7 +62,7 @@ int	ft_checkmap4(t_vars *vars)
 		}
 		else if (vars->map[i] == 'C')
 			vars->colcount++;
-		else if (vars->map[i] != '0' && vars->map[i] != '1')
+		else if (vars->map[i] != '0' && vars->map[i] != '1' && vars->map[i] != 'B')
 			return (-1);
 		i++;
 	}

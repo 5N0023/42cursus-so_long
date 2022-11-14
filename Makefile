@@ -40,7 +40,7 @@ $(NAME): $(OBJS)
 	 cd ./libft && make && cd ..
 	 cc $(OBJS) $(LIBFT) $(GNL) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	 
 
-bonus: $(OBJSB)
+bonus: $(OBJSB) so_long_bonus.h
 	 cd ./libft && make && cd ..
 	 cc $(OBJSB) $(LIBFT) $(GNL) -lmlx -framework OpenGL -framework AppKit -o $(BONUS)
 
@@ -50,7 +50,7 @@ clean:
 
 fclean: clean
 	cd ./libft && make fclean && cd ..
-	rm -f $(NAME) $(LIBFT)
+	rm -f $(NAME) $(BONUS) $(LIBFT)
 	
 
 re: fclean all
