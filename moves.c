@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 00:24:04 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/14 02:28:07 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_moveright(t_vars *vars)
 				"./img/fishr.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 			vars->img,vars->x, vars->y);
-		free(vars->img);
 		ft_cleanlastpos(vars->x-50, vars->y, vars);
 		vars->moves++;
 		ft_showmoves(vars);
@@ -36,7 +35,6 @@ void	ft_moveright(t_vars *vars)
 				"./img/fishr.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 				vars->img, vars->x, vars->y);
-		free(vars->img);
 	}
 }
 
@@ -52,7 +50,6 @@ void	ft_moveleft(t_vars *vars)
 				"./img/fish left.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 				vars->img, vars->x, vars->y);
-		free(vars->img);
 		ft_cleanlastpos(vars->x+50, vars->y, vars);
 		vars->moves++;
 		ft_showmoves(vars);
@@ -64,7 +61,6 @@ void	ft_moveleft(t_vars *vars)
 					"./img/fish left.xpm", &a, &b);
 			mlx_put_image_to_window(vars->mlx, vars->win,
 					vars->img, vars->x, vars->y);
-			free(vars->img);
 	}
 }
 
@@ -80,7 +76,6 @@ void	ft_moveup(t_vars *vars)
 				"./img/fish up.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 				vars->img, vars->x, vars->y);
-		free(vars->img);
 		ft_cleanlastpos(vars->x, vars->y+50, vars);
 		vars->moves++;
 		ft_showmoves(vars);
@@ -92,7 +87,6 @@ void	ft_moveup(t_vars *vars)
 				"./img/fish up.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 				vars->img, vars->x, vars->y);
-		free(vars->img);
 	}
 }
 
@@ -108,7 +102,6 @@ void	ft_movedown(t_vars *vars)
 				"./img/fish down.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 				vars->img, vars->x, vars->y);
-		free(vars->img);
 		ft_cleanlastpos(vars->x, vars->y-50, vars);
 		vars->moves++;
 		ft_showmoves(vars);
@@ -120,7 +113,6 @@ void	ft_movedown(t_vars *vars)
 				"./img/fish down.xpm", &a, &b);
 		mlx_put_image_to_window(vars->mlx, vars->win,
 			vars->img, vars->x, vars->y);
-		free(vars->img);
 	}
 }
 
@@ -144,8 +136,6 @@ int	key_hook(int keycode, t_vars *vars)
 	if (keycode == 53)
 		{
 			free(vars->map);
-			free(vars->mlx);
-			free(vars->win);
 			exit(1);
 		}
 	return (0);
