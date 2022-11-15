@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 //(y * vars->w) + (x % vars->w) / 50
 
 int	ft_checkwall2(int x, int y,t_vars *vars,char *map)
@@ -41,7 +41,7 @@ int ft_checkpath1(t_vars *vars,int x,int y,char *map1)
 
 	map = map1;
 	if(ft_checkcollective2(x,y,vars,map))
-		c++;
+		vars->colcount++;
 	if(ft_checkexit2(x,y,vars,map))
 		e++;
 	map[((y/50) * (vars->w/50)) + (x / 50)] = '1';
@@ -53,7 +53,7 @@ int ft_checkpath1(t_vars *vars,int x,int y,char *map1)
 		ft_checkpath1(vars, x - 50, y,map);			
 	if (ft_checkwall2(x, y - 50,vars,map))
 		ft_checkpath1(vars, x, y - 50,map);
-	if (c == vars->colcount && e == 1)
+	if (vars->colcount != 0 && e == 1)
 		return (1);	
 	return -1;
 }

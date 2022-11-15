@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 21:29:49 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/15 04:29:55 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int	key_hook(int keycode, t_vars *vars)
 {
 	int	a;
 	int	b;
-
+	
 	if (ft_checkwin(vars) == 1)
 	{
 		if (keycode == 13)

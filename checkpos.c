@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:09:58 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 21:48:59 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:01:12 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	ft_checkwall(int x, int y, t_vars *vars)
 	int	n;
 
 	n = ((y/50) * (vars->w/50)) + (x / 50);
-	if (vars->map[n] == '1' || ft_checkenemy1(x,y,vars))
-				return (1);
+	if (vars->map[n] == '1')
+		return (1);
 	return (0);
 }
 

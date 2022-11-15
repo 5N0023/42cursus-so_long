@@ -6,11 +6,22 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 21:59:43 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:02:57 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+void ft_drawplayerright(t_vars *vars)
+{
+	int a;
+	int b;
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+				"./img/fishr.xpm", &a, &b);
+		mlx_put_image_to_window(vars->mlx, vars->win,
+			vars->img,vars->x, vars->y);
+		ft_cleanlastpos(vars->x-50, vars->y, vars);
+}
+		
 
 void	ft_moveright(t_vars *vars)
 {
@@ -21,11 +32,7 @@ void	ft_moveright(t_vars *vars)
 	if (!ft_checkwall(vars->x + 50, vars->y, vars))
 	{
 		vars->x += 50;
-		vars->img = mlx_xpm_file_to_image(vars->mlx,
-				"./img/fishr.xpm", &a, &b);
-		mlx_put_image_to_window(vars->mlx, vars->win,
-			vars->img,vars->x, vars->y);
-		ft_cleanlastpos(vars->x-50, vars->y, vars);
+		ft_drawplayerright(vars);
 		vars->moves++;
 		ft_showmoves(vars);
 	}
@@ -124,8 +131,10 @@ int	key_hook(int keycode, t_vars *vars)
 {
 	int	a;
 	int	b;
-
-	if ( ft_checkwin(vars) == 1 && ft_checklose(vars) == 1)
+	ft_checkcollective(vars);
+	ft_checklose(vars);
+	ft_checkwin(vars);
+	if (vars->status == 0)
 	{
 		if (keycode == 13)
 			ft_moveup(vars);
@@ -135,9 +144,10 @@ int	key_hook(int keycode, t_vars *vars)
 			ft_moveright(vars);
 		if (keycode == 0)
 			ft_moveleft(vars);
-		ft_checkcollective(vars);
 		ft_checklose(vars);
+		ft_checkwin(vars);
 	}
+	ft_moveenemy(vars);
 	if (keycode == 53)
 		{
 			free(vars->map);

@@ -42,9 +42,8 @@ int	ft_checkenemy(t_vars *vars)
 {
 	int	n;
 
-	n = ((vars->y/50) * (vars->w/50)) + (vars->x / 50);
-	if (vars->map[n] == 'B')
-				return (1);
+	if(vars->x == vars->enemyx && vars->y == vars->enemyy)
+		return (1);
 	return (0);
 }
 void ft_drawrip(t_vars *vars)
@@ -73,18 +72,16 @@ int	ft_checkenemy1(int x, int y, t_vars *vars)
 }
 int ft_checklose(t_vars *vars)
 {
-	static int c;
 	int a;
 	int b;
 	int x;
 	int y;
 
-	if (ft_checkenemy(vars) && c == 0)
+	if (ft_checkenemy(vars) && vars->status == 0)
 	{
-		c++;
+		vars->status = 2;
 		x = (vars->w - 250) / 2;
 		y = (vars->h - 150) / 2;
-		
 		ft_drawrip(vars);
 		ft_clearlose(vars);
 		vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/lose.xpm", &a, &b);
@@ -93,22 +90,21 @@ int ft_checklose(t_vars *vars)
 		 x, y);
 		return (0);
 	}
-	if (c == 1)
+	if (vars->status == 2)
 		return (0);
 	return (1);
 }
 
 int ft_checkwin(t_vars *vars)
 {
-	static int c;
 	int a;
 	int b;
 	int x;
 	int y;
 
-	if (vars->colcount == 0 && vars->x == vars->exitx && vars->y == vars->exity && c == 0)
+	if (vars->colcount == 0 && vars->x == vars->exitx && vars->y == vars->exity && vars->status == 0)
 	{
-		c++;
+		vars->status = 1;
 		x = (vars->w - 250) / 2;
 		y = (vars->h - 150) / 2;
 		
@@ -120,7 +116,7 @@ int ft_checkwin(t_vars *vars)
 		 x, y);
 		return (0);
 	}
-	if (c == 1)
+	if (vars->status == 1)
 		return (0);
 	return (1);
 }

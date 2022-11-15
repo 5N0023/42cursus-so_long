@@ -53,7 +53,7 @@ int ft_checkpath1(t_vars *vars,int x,int y,char *map1)
 		ft_checkpath1(vars, x - 50, y,map);			
 	if (ft_checkwall2(x, y - 50,vars,map))
 		ft_checkpath1(vars, x, y - 50,map);
-	if (c == vars->colcount && e == 1)
+	if (c == vars->colcount && e == 1 && vars->enemycount == 1)
 		return (1);	
 	return -1;
 }

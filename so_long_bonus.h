@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/14 21:59:14 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:58:28 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ typedef struct s_vars {
 	int		colcount;
 	int		door;
 	int		vision;
+	int		*enemypos;
+	int		enemycount;
+	int		enemyx;
+	int		enemyy;
+	int		enemyd;
+	int		status;
 }				t_vars;
 
 int		ft_checkmap1(const char *map, t_vars *vars, int fd);
@@ -60,6 +66,12 @@ int		ft_checkpath(t_vars *vars);
 int		ft_checkwin(t_vars *vars);
 int		ft_checklose(t_vars *vars);
 void	ft_draweatanim(t_vars *vars);
-int	ft_checkenemy1(int x, int y, t_vars *vars);
+int		ft_checkenemy1(int x, int y, t_vars *vars);
+void	ft_moveenemy(t_vars *vars);
+void	ft_drawframesright(t_vars *vars);
+void	ft_drawframesleft(t_vars *vars);
+void	ft_moveenemyleft(t_vars *vars);
+void	drawopendoor(t_vars *vars);
+void	drawcloseddoor(t_vars *vars);
 
 #endif
