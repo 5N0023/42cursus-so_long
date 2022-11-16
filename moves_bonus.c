@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/15 19:02:57 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:58:59 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,6 @@ int	key_hook(int keycode, t_vars *vars)
 {
 	int	a;
 	int	b;
-	ft_checkcollective(vars);
 	ft_checklose(vars);
 	ft_checkwin(vars);
 	if (vars->status == 0)
@@ -147,6 +146,7 @@ int	key_hook(int keycode, t_vars *vars)
 		ft_checklose(vars);
 		ft_checkwin(vars);
 	}
+	ft_checkcollective(vars);
 	ft_moveenemy(vars);
 	if (keycode == 53)
 		{
