@@ -6,7 +6,7 @@
 #    By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 20:07:38 by mlektaib          #+#    #+#              #
-#    Updated: 2022/11/12 21:04:52 by mlektaib         ###   ########.fr        #
+#    Updated: 2022/11/17 21:51:35 by mlektaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ SRCS = ft_isalpha.c 	\
 		ft_lstdelone.c		\
 		ft_lstclear.c 		\
 		ft_lstiter.c		\
-		ft_lstmap.c		
+		ft_lstmap.c			\
+		get_next_line.c
 
 NAME = libft.a
 

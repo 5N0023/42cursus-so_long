@@ -25,7 +25,6 @@ SRCSB =	main_bonus.c 		\
 		sprite_bonus.c		\
 
 LIBFT = ./libft/libft.a	
-GNL = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -40,11 +39,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	 cd ./libft && make && cd ..
-	 cc $(OBJS) $(LIBFT) $(GNL) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	 
+	 cc $(OBJS) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)	 
 
 bonus: $(OBJSB) so_long_bonus.h
 	 cd ./libft && make && cd ..
-	 cc $(OBJSB) $(LIBFT) $(GNL) -lmlx -framework OpenGL -framework AppKit -o $(BONUS)
+	 cc $(OBJSB) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(BONUS)
 
 clean:
 	cd ./libft && make clean && cd ..

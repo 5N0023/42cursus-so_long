@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:35:56 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/12 23:40:52 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:50:59 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include <stdlib.h>
 # include "./../libft/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
-# endif
+
 
 char	*get_next_line(int fd);
 int		read_file(int fd, int *readed, t_list **buffer);
