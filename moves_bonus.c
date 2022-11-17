@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:46:46 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/17 21:25:05 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 22:02:13 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,14 +135,9 @@ void	ft_movedown(t_vars *vars)
 	}
 }
 
-int	key_hook(int keycode, t_vars *vars)
+void ft_move(int keycode,t_vars *vars)
 {
-	int	a;
-	int	b;
-	
-	if (vars->status == 0)
-	{
-		if (keycode == 13)
+	if (keycode == 13)
 			ft_moveup(vars);
 		if (keycode == 1)
 			ft_movedown(vars);
@@ -150,12 +145,24 @@ int	key_hook(int keycode, t_vars *vars)
 			ft_moveright(vars);
 		if (keycode == 0)
 			ft_moveleft(vars);
+}
+
+int	key_hook(int keycode, t_vars *vars)
+{
+	int	a;
+	int	b;
+	
+	if (vars->status == 0)
+	{
+		ft_move(keycode,vars);
 		ft_drawsprite(vars);
 		ft_checklose(vars);
 		ft_checkwin(vars);
 		ft_checkcollective(vars);
 	}
 	ft_moveenemy(vars);
+	ft_checklose(vars);
+	ft_checkwin(vars);
 	if (keycode == 53)
 		{
 			free(vars->map);

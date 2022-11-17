@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/17 21:25:38 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:56:34 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "./gnl/get_next_line.h"
 # include "stdlib.h"
 # include "./libft/libft.h"
 
