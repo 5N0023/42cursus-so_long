@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:09:58 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/15 17:01:12 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:33:28 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ void	ft_cleanlastpos(int x, int y, t_vars *vars)
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/water.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
+	mlx_destroy_image(vars->mlx,vars->img);
 	if (x == vars->exitx && y == vars->exity)
 	{
 		vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/cdoor.xpm", &a, &b);
 		ft_checkimg(vars);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
+		mlx_destroy_image(vars->mlx,vars->img);
 	}
 }
 
@@ -63,4 +65,5 @@ void	ft_startpos(t_vars *vars, int i)
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/fishr.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->x, vars->y);
+	mlx_destroy_image(vars->mlx,vars->img);
 }

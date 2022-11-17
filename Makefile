@@ -22,6 +22,7 @@ SRCSB =	main_bonus.c 		\
 		checkwin_bonus.c	\
 		draweatanim_bonus.c	\
 		enemy_bonus.c		\
+		sprite_bonus.c		\
 
 LIBFT = ./libft/libft.a	
 GNL = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c

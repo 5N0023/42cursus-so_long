@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:37:47 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/15 18:06:08 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:58:33 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int arg, char *map[])
 	vars.win = mlx_new_window(vars.mlx, vars.w, vars.h, map[0]);
 	ft_drawmap(&vars);
 	ft_showmoves(&vars);
-	mlx_key_hook(vars.win, key_hook, &vars);
+	mlx_hook(vars.win, 2, 0,key_hook, &vars);
 	mlx_loop(vars.mlx);
 	return (0);
 }

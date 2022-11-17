@@ -43,6 +43,7 @@ void ft_drawframesright(t_vars *vars)
 	vars->img = mlx_xpm_file_to_image(vars->mlx, pos, &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->enemyx, vars->enemyy);
+	mlx_destroy_image(vars->mlx,vars->img);
 	free(pos);
 	ft_checkcollective3(vars,'r');
 
@@ -57,6 +58,7 @@ void ft_drawframesleft(t_vars *vars)
 	vars->img = mlx_xpm_file_to_image(vars->mlx, pos, &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, vars->enemyx, vars->enemyy);
+	mlx_destroy_image(vars->mlx,vars->img);
 	free(pos);
 	ft_checkcollective3(vars,'l');
 }

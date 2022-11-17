@@ -39,6 +39,7 @@ int ft_checkwin(t_vars *vars)
 		ft_checkimg(vars);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		 x, y);
+		mlx_destroy_image(vars->mlx,vars->img);
 		return (0);
 	}
 	if (c == 1)

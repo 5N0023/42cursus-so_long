@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:21:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/15 18:58:19 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:34:37 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ void	drawcloseddoor(t_vars *vars)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->exitx, vars->exity);
+	mlx_destroy_image(vars->mlx,vars->img);
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/cdoor.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->exitx, vars->exity);
+	mlx_destroy_image(vars->mlx,vars->img);
 }
 
 void	drawopendoor(t_vars *vars)
@@ -36,10 +38,12 @@ void	drawopendoor(t_vars *vars)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->exitx, vars->exity);
+	mlx_destroy_image(vars->mlx,vars->img);
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/odoor.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->exitx, vars->exity);
+	mlx_destroy_image(vars->mlx,vars->img);
 }
 
 void	ft_drawwall(t_vars *vars, int i)
@@ -54,6 +58,7 @@ void	ft_drawwall(t_vars *vars, int i)
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/wall.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
+	mlx_destroy_image(vars->mlx,vars->img);
 }
 
 void	ft_drawcollective(t_vars *vars, int i)
@@ -69,6 +74,7 @@ void	ft_drawcollective(t_vars *vars, int i)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->collectivex, vars->collectivey);
+	mlx_destroy_image(vars->mlx,vars->img);
 }
 
 void	ft_drawwater(t_vars *vars, int i)
@@ -84,6 +90,7 @@ void	ft_drawwater(t_vars *vars, int i)
 			"./img/water.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
+	mlx_destroy_image(vars->mlx,vars->img);
 }
 
 void	ft_drawexit(t_vars *vars, int i)
@@ -97,4 +104,5 @@ void	ft_drawexit(t_vars *vars, int i)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win,
 		vars->img, vars->exitx, vars->exity);
+	mlx_destroy_image(vars->mlx,vars->img);
 }

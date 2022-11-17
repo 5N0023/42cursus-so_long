@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:02:41 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/15 18:33:45 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 20:38:26 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,24 @@ int	ft_checkmap4(t_vars *vars)
 	e = 0;
 	p = 0;
 	c = 0;
+
 	while (vars->map[i])
 	{
 		if (vars->map[i] == 'E')
 			e++;
 		else if (vars->map[i] == 'P')
 		{
-			vars->startx = (i % (vars->w / 50)) * 50;
-			vars->starty = (i / (vars->w / 50)) * 50;
+			 vars->startx = (i % (vars->w / 50)) * 50;
+			 vars->starty = (i / (vars->w / 50)) * 50;
 			p++;
 		}
-		else  if (vars->map[i] != 'C')
+		else if (vars->map[i] == 'C')
 			vars->colcount++;
 		else if (vars->map[i] != '0' && vars->map[i] != '1')
 			return (-1);
 		i++;
 	}
-	if (e != 1 || p > 1 || p == 0)
+	if (e > 1 || e == 0 || p > 1 || p == 0 || vars->colcount == 0)
 		return (-1);
 	return (0);
 }

@@ -55,10 +55,12 @@ void ft_drawrip(t_vars *vars)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
+	mlx_destroy_image(vars->mlx,vars->img);
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/rip.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
+	mlx_destroy_image(vars->mlx,vars->img);
 
 }
 int	ft_checkenemy1(int x, int y, t_vars *vars)
@@ -88,6 +90,7 @@ int ft_checklose(t_vars *vars)
 		ft_checkimg(vars);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		 x, y);
+		mlx_destroy_image(vars->mlx,vars->img);
 		return (0);
 	}
 	if (vars->status == 2)
@@ -114,6 +117,7 @@ int ft_checkwin(t_vars *vars)
 		ft_checkimg(vars);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		 x, y);
+		mlx_destroy_image(vars->mlx,vars->img);
 		return (0);
 	}
 	if (vars->status == 1)

@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/15 18:58:28 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:25:38 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ void	ft_drawframesleft(t_vars *vars);
 void	ft_moveenemyleft(t_vars *vars);
 void	drawopendoor(t_vars *vars);
 void	drawcloseddoor(t_vars *vars);
-
+void	ft_drawsprite(t_vars *vars);
 #endif

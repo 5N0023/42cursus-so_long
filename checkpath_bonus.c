@@ -1,6 +1,5 @@
 
 #include "so_long_bonus.h"
-//(y * vars->w) + (x % vars->w) / 50
 
 int	ft_checkwall2(int x, int y,t_vars *vars,char *map)
 {
