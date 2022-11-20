@@ -1,12 +1,14 @@
-SRCS =	main.c 		\
-		checkmap.c 	\
-		checkpos.c	\
-		draw.c		\
-		drawmap.c	\
-		moves.c		\
-		checkpath.c	\
-		checkwin.c	\
-		draweatanim.c
+SRCS =	main.c 			\
+		checkmap.c 		\
+		checkpos.c		\
+		draw.c			\
+		draw2.c			\
+		drawmap.c		\
+		moves.c			\
+		checkpath.c		\
+		checkwin.c		\
+		draweatanim.c	\
+		checkmap2.c
 
 NAME = so_long
 
@@ -16,13 +18,15 @@ SRCSB =	main_bonus.c 		\
 		checkmap_bonus.c 	\
 		checkpos_bonus.c	\
 		draw_bonus.c		\
-		drawmap_bonus.c	\
+		drawmap_bonus.c		\
 		moves_bonus.c		\
 		checkpath_bonus.c	\
 		checkwin_bonus.c	\
 		draweatanim_bonus.c	\
 		enemy_bonus.c		\
 		sprite_bonus.c		\
+		checkmap2_bonus.c	\
+		draw2_bonus.c		
 
 LIBFT = ./libft/libft.a	
 

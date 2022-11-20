@@ -1,16 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 23:21:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/17 20:35:01 by mlektaib         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "so_long.h"
+
 
 void	drawopendoor(t_vars *vars)
 {
@@ -51,6 +41,7 @@ void	ft_drawcollective(t_vars *vars, int i)
 	
 	vars->collectivex = (i % (vars->w / 50)) * 50;
 	vars->collectivey = (i / (vars->w / 50)) * 50;
+	ft_drawwater(vars,i);
 	vars->img = mlx_xpm_file_to_image(vars->mlx,
 			"./img/collective.xpm", &a, &b);
 	ft_checkimg(vars);

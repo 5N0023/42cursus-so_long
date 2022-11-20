@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:44:30 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/17 21:44:40 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/20 21:44:52 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ft_drawmap(t_vars *vars)
 	int	i;
 
 	i = 0;
-	vars->enemypos = malloc(sizeof(int) * vars->enemycount);
 	while (vars->map[i])
 	{
 		if (vars->map[i])

@@ -1,4 +1,5 @@
 #include "so_long.h"
+
 void ft_clearwin(t_vars *vars)
 {
 	int i;
@@ -18,21 +19,18 @@ void ft_clearwin(t_vars *vars)
 	}
 }
 
-
 int ft_checkwin(t_vars *vars)
 {
-	static int c;
 	int a;
 	int b;
 	int x;
 	int y;
 
-	if (vars->colcount == 0 && vars->x == vars->exitx && vars->y == vars->exity && c == 0)
+	if (vars->colcount == 0 && vars->x == vars->exitx && vars->y == vars->exity && vars->status == 0)
 	{
-		c++;
+		vars->status = 1;
 		x = (vars->w - 250) / 2;
 		y = (vars->h - 150) / 2;
-		
 		drawopendoor(vars);
 		ft_clearwin(vars);
 		vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/win.xpm", &a, &b);
@@ -42,7 +40,7 @@ int ft_checkwin(t_vars *vars)
 		mlx_destroy_image(vars->mlx,vars->img);
 		return (0);
 	}
-	if (c == 1)
+	if (vars->status == 1)
 		return (0);
 	return (1);
 }
