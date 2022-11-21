@@ -29,6 +29,7 @@ SRCSB =	main_bonus.c 		\
 		checkmap2_bonus.c	\
 		draw2_bonus.c		\
 		drawplayer_bonus.c	\
+		enemy2_bonus.c		
 
 LIBFT = ./libft/libft.a	
 

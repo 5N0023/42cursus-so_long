@@ -3,50 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   checkwin_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:10:17 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:10:18 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:41:43 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-void ft_clearwin(t_vars *vars)
-{
-	int i;
-	int j;
 
-	i = 0;
-	j = 0;
-	while(i++ < vars->w)
+void	ft_clearwinlose(t_vars *vars, int c)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	j = -1;
+	if (c == 1)
 	{
-		j = -1;
-		while(j++ < vars->h)
+		while (i++ < vars->w)
 		{
-			mlx_pixel_put(vars->mlx,vars->win,i,j,0xFFFFFF);
-			j++;
+			j = -1;
+			while (j++ < vars->h)
+				mlx_pixel_put(vars->mlx, vars->win, i, j, 0xFFFFFF);
 		}
-		i ++;
 	}
-}
-
-
-void ft_clearlose(t_vars *vars)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while(i++ < vars->w)
+	if (c == 2)
 	{
-		j = -1;
-		while(j++ < vars->h)
+		while (i++ < vars->w)
 		{
-			mlx_pixel_put(vars->mlx,vars->win,i,j,0x0);
-			j++;
+			j = -1;
+			while (j++ < vars->h)
+				mlx_pixel_put(vars->mlx, vars->win, i, j, 0x0);
 		}
-		i ++;
 	}
 }
 
@@ -54,11 +43,12 @@ int	ft_checkenemy(t_vars *vars)
 {
 	int	n;
 
-	if(vars->x == vars->enemyx && vars->y == vars->enemyy)
+	if (vars->x == vars->enemyx && vars->y == vars->enemyy)
 		return (1);
 	return (0);
 }
-void ft_drawrip(t_vars *vars)
+
+void	ft_drawrip(t_vars *vars)
 {
 	int	a;
 	int	b;
@@ -67,29 +57,20 @@ void ft_drawrip(t_vars *vars)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/rip.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
-
+	mlx_destroy_image(vars->mlx, vars->img);
 }
-int	ft_checkenemy1(int x, int y, t_vars *vars)
-{
-	int	n;
 
-	n = ((y/50) * (vars->w/50)) + (x / 50);
-	if (vars->map[n] == 'B')
-				return (1);
-	return (0);
-}
-int ft_checklose(t_vars *vars)
+int	ft_checklose(t_vars *vars)
 {
-	int a;
-	int b;
-	int x;
-	int y;
+	int	a;
+	int	b;
+	int	x;
+	int	y;
 
 	if (ft_checkenemy(vars) && vars->status == 0)
 	{
@@ -97,12 +78,12 @@ int ft_checklose(t_vars *vars)
 		x = (vars->w - 250) / 2;
 		y = (vars->h - 150) / 2;
 		ft_drawrip(vars);
-		ft_clearlose(vars);
+		ft_clearwinlose(vars, 2);
 		vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/lose.xpm", &a, &b);
 		ft_checkimg(vars);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
-		 x, y);
-		mlx_destroy_image(vars->mlx,vars->img);
+			x, y);
+		mlx_destroy_image(vars->mlx, vars->img);
 		return (0);
 	}
 	if (vars->status == 2)
@@ -110,26 +91,26 @@ int ft_checklose(t_vars *vars)
 	return (1);
 }
 
-int ft_checkwin(t_vars *vars)
+int	ft_checkwin(t_vars *vars)
 {
-	int a;
-	int b;
-	int x;
-	int y;
+	int	a;
+	int	b;
+	int	x;
+	int	y;
 
-	if (vars->colcount == 0 && vars->x == vars->exitx && vars->y == vars->exity && vars->status == 0)
+	if (vars->colcount == 0 && vars->x == vars->exitx
+		&& vars->y == vars->exity && vars->status == 0)
 	{
 		vars->status = 1;
 		x = (vars->w - 250) / 2;
 		y = (vars->h - 150) / 2;
-		
 		drawopendoor(vars);
-		ft_clearwin(vars);
+		ft_clearwinlose(vars, 1);
 		vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/win.xpm", &a, &b);
 		ft_checkimg(vars);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
-		 x, y);
-		mlx_destroy_image(vars->mlx,vars->img);
+			x, y);
+		mlx_destroy_image(vars->mlx, vars->img);
 		return (0);
 	}
 	if (vars->status == 1)

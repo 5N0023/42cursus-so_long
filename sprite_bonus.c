@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:11:55 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 22:25:35 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:28:42 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strframe(int d)
 	char	*frame;
 	char	xpm[5];
 
-	ft_memmove(str,"./img/sprite/",15);
-	ft_memmove(xpm,".xpm",5);
+	ft_memmove(str, "./img/sprite/", 15);
+	ft_memmove(xpm, ".xpm", 5);
 	if (d < 10)
 	{
 		frame = malloc(sizeof(char) * 19);

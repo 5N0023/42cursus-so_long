@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   drawmap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:08:39 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:08:40 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:54:23 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "so_long.h"
 
@@ -48,7 +47,7 @@ void	ft_checkimg(t_vars *vars)
 
 void	ft_showmoves(t_vars *vars)
 {
-	char *moves;
+	char	*moves;
 
 	ft_putstr_fd("moves : ", 1);
 	ft_putnbr_fd(vars->moves, 1);

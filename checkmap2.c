@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   checkmap2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:09:11 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:09:14 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:25:57 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "so_long.h"
 
@@ -40,14 +39,15 @@ char	*ft_strjoin1(char *map, char *line, int w)
 	return (newmap);
 }
 
-void ft_setvariables(int *i,int *e,int *p ,int *c)
+void	ft_setvariables(int *i, int *e, int *p, int *c)
 {
 	*i = 0;
 	*e = 0;
 	*p = 0;
 	*c = 0;
 }
-void ft_setfirstpos(t_vars *vars,int i)
+
+void	ft_setfirstpos(t_vars *vars, int i)
 {
 	vars->startx = (i % (vars->w / 50)) * 50;
 	vars->starty = (i / (vars->w / 50)) * 50;
@@ -67,7 +67,7 @@ int	ft_checkmap4(t_vars *vars)
 			e++;
 		else if (vars->map[i] == 'P')
 		{
-			ft_setfirstpos(vars,i);
+			ft_setfirstpos(vars, i);
 			p++;
 		}
 		else if (vars->map[i] == 'C')

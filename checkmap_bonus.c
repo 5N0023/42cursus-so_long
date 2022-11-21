@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   checkmap_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:09:33 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:09:35 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:29:10 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "so_long_bonus.h"
 

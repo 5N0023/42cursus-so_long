@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:08:06 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:08:08 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 23:00:34 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	drawcloseddoor(t_vars *vars)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->exitx, vars->exity);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/cdoor.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->exitx, vars->exity);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 }

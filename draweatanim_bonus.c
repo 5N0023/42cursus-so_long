@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draweatanim_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlektaib <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:08:32 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:08:34 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:56:41 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
 void	ft_draweatanimup(t_vars *vars)
-
 {
 	int	a;
 	int	b;
@@ -22,67 +21,72 @@ void	ft_draweatanimup(t_vars *vars)
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/eatanimup.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 }
+
 void	ft_draweatanimdown(t_vars *vars)
-
 {
 	int	a;
 	int	b;
 
-	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/water.xpm", &a, &b);
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+			"./img/water.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
-	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/eatanimdown.xpm", &a, &b);
+	mlx_destroy_image(vars->mlx, vars->img);
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+			"./img/eatanimdown.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 }
+
 void	ft_draweatanimright(t_vars *vars)
-
 {
 	int	a;
 	int	b;
 
-	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/water.xpm", &a, &b);
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+			"./img/water.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
-	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/eatanimright.xpm", &a, &b);
+	mlx_destroy_image(vars->mlx, vars->img);
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+			"./img/eatanimright.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 }
-void	ft_draweatanimleft(t_vars *vars)
 
+void	ft_draweatanimleft(t_vars *vars)
 {
 	int	a;
 	int	b;
 
-	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/water.xpm", &a, &b);
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+			"./img/water.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
-	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/eatanimleft.xpm", &a, &b);
+	mlx_destroy_image(vars->mlx, vars->img);
+	vars->img = mlx_xpm_file_to_image(vars->mlx,
+			"./img/eatanimleft.xpm", &a, &b);
 	ft_checkimg(vars);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->x, vars->y);
-	mlx_destroy_image(vars->mlx,vars->img);
+	mlx_destroy_image(vars->mlx, vars->img);
 }
 
 void	ft_draweatanim(t_vars *vars)
-
 {
 	if (vars->vision == 1)
 		ft_draweatanimup(vars);
