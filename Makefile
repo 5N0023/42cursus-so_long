@@ -8,7 +8,8 @@ SRCS =	main.c 			\
 		checkpath.c		\
 		checkwin.c		\
 		draweatanim.c	\
-		checkmap2.c
+		checkmap2.c		\
+		drawplayer.c	\
 
 NAME = so_long
 
@@ -26,7 +27,8 @@ SRCSB =	main_bonus.c 		\
 		enemy_bonus.c		\
 		sprite_bonus.c		\
 		checkmap2_bonus.c	\
-		draw2_bonus.c		
+		draw2_bonus.c		\
+		drawplayer_bonus.c	\
 
 LIBFT = ./libft/libft.a	
 

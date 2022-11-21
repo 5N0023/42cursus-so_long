@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:51:12 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/17 21:51:23 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/20 22:12:20 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 # endif
+
 typedef struct s_list
 {
 	char			*content;
