@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:11:01 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/20 22:25:56 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:24:49 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ void	ft_move(int keycode, t_vars *vars)
 
 int	key_hook(int keycode, t_vars *vars)
 {
-	int	a;
-	int	b;
-
 	if (vars->status == 0)
 	{
 		ft_move(keycode, vars);

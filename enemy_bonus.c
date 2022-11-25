@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:34:01 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 22:44:20 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:33:35 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ void	ft_drawframesleft(t_vars *vars)
 
 void	ft_moveenemyright(t_vars *vars, int *m)
 {
-	int	a;
-	int	b;
-	int	x;
-	int	y;
-	int	i;
-
-	i = 0;
 	if (!ft_checkwall(vars->enemyx + 50, vars->enemyy, vars))
 	{
 		vars->enemyd = 1;
@@ -70,10 +63,6 @@ void	ft_moveenemyright(t_vars *vars, int *m)
 
 void	ft_moveenemyleft(t_vars *vars)
 {
-	int			a;
-	int			b;
-	int			x;
-	int			y;
 	static int	m;
 
 	if (!ft_checkwall(vars->enemyx - 50, vars->enemyy, vars) && m == 0)

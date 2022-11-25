@@ -37,7 +37,7 @@ OBJS = $(SRCS:.c=.o)
 
 OBJSB = $(SRCSB:.c=.o)
 
-CC_FLAGS = 
+CC_FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

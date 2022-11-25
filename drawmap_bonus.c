@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:44:30 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 22:54:00 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:39:07 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,18 @@ void	ft_drawenemy(t_vars *vars, int i)
 {
 	int			a;
 	int			b;
-	int			x;
-	int			y;
 
 	vars->enemyx = (i % (vars->w / 50)) * 50;
 	vars->enemyy = (i / (vars->w / 50)) * 50;
 	vars->img = mlx_xpm_file_to_image(vars->mlx, "./img/enemy.xpm", &a, &b);
 	ft_checkimg(vars);
-	mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
+	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
+		vars->enemyx, vars->enemyy);
 	mlx_destroy_image(vars->mlx, vars->img);
 }
 
 void	ft_drawmap(t_vars *vars)
 {
-	int	a;
-	int	b;
 	int	i;
 
 	i = 0;
@@ -79,8 +76,8 @@ void	ft_clearscore(t_vars *vars, int i)
 
 void	ft_showmoves(t_vars *vars)
 {
-	char	*moves;
 	int		i;
+	char	*moves;
 
 	i = 0;
 	moves = ft_itoa(vars->moves);

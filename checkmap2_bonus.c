@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:09:18 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 23:40:47 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:05:08 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strjoin1(char *map, char *line, int w)
 	if (!map)
 		map = ft_strdup("");
 	newmap = malloc(ft_strlen(map) + ft_strlen(line) + 1);
+	if (!newmap)
+		return (0);
 	while (map[++i] != 0 && map[i] != '\n')
 		newmap[i] = map[i];
 	while (line[++j] != 0 && line[j] != '\n')

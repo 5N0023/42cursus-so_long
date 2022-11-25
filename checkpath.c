@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:09:41 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 23:39:23 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:25:26 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	ft_checkpath1(t_vars *vars, int x, int y, char *map)
 {
 	static int	e;
 	static int	c;
-	static int	p;
 
 	if (ft_checkcollective2(x, y, vars, map))
 		c++;

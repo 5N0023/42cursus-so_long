@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 23:08:37 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:32:07 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,16 @@ void	ft_drawframesright(t_vars *vars);
 void	ft_drawframesleft(t_vars *vars);
 void	ft_moveenemyleft(t_vars *vars);
 void	drawopendoor(t_vars *vars);
-void	drawclosedoor(t_vars *vars);
+void	drawcloseddoor(t_vars *vars);
 void	ft_drawsprite(t_vars *vars);
 int		ft_checkmap4(t_vars *vars);
 char	*ft_strjoin1(char *map, char *line, int w);
 void	ft_checkcollective3(t_vars *vars, char d);
 char	*ft_strpos(char d);
 int		ft_checkenemy1(int x, int y, t_vars *vars);
+void	ft_moveright(t_vars *vars);
+void	ft_moveleft(t_vars *vars);
+void	ft_movedown(t_vars *vars);
+void	ft_moveup(t_vars *vars);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:10:17 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 23:41:43 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:36:08 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ void	ft_clearwinlose(t_vars *vars, int c)
 
 int	ft_checkenemy(t_vars *vars)
 {
-	int	n;
-
 	if (vars->x == vars->enemyx && vars->y == vars->enemyy)
 		return (1);
 	return (0);
@@ -86,7 +84,7 @@ int	ft_checklose(t_vars *vars)
 		mlx_destroy_image(vars->mlx, vars->img);
 		return (0);
 	}
-	if (vars->status == 2)
+	if (vars->status)
 		return (0);
 	return (1);
 }
@@ -113,7 +111,7 @@ int	ft_checkwin(t_vars *vars)
 		mlx_destroy_image(vars->mlx, vars->img);
 		return (0);
 	}
-	if (vars->status == 1)
+	if (vars->status)
 		return (0);
 	return (1);
 }

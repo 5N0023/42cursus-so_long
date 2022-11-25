@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:08:39 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 22:54:23 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:24:38 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_drawmap(t_vars *vars)
 {
-	int	a;
-	int	b;
 	int	i;
 
 	i = 0;
@@ -47,8 +45,6 @@ void	ft_checkimg(t_vars *vars)
 
 void	ft_showmoves(t_vars *vars)
 {
-	char	*moves;
-
 	ft_putstr_fd("moves : ", 1);
 	ft_putnbr_fd(vars->moves, 1);
 	ft_putchar_fd('\n', 1);

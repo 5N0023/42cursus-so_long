@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:09:33 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 23:29:10 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:23:06 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	ft_checkmap2(char *map, t_vars *vars)
 	int		fd;
 	char	*line;
 	int		len;
-	int		tmp;
 
 	fd = open(map, O_RDONLY);
 	line = get_next_line(fd);

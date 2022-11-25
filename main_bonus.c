@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:37:47 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/21 22:32:22 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:42:49 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int arg, char *map[])
 		|| ft_checkpath(&vars) == -1)
 	{
 		ft_putstr_fd("Error : map not valid\n", 1);
-		return (0);
+		exit (1);
 	}
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, vars.w, vars.h, map[0]);
