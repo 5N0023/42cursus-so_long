@@ -10,6 +10,7 @@ SRCS =	main.c 			\
 		draweatanim.c	\
 		checkmap2.c		\
 		drawplayer.c	\
+		playermoves.c
 
 NAME = so_long
 
@@ -29,7 +30,8 @@ SRCSB =	main_bonus.c 		\
 		checkmap2_bonus.c	\
 		draw2_bonus.c		\
 		drawplayer_bonus.c	\
-		enemy2_bonus.c		
+		enemy2_bonus.c		\
+		playermoves_bonus.c
 
 LIBFT = ./libft/libft.a	
 
