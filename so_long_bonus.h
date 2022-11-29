@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/26 09:34:43 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:18:55 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ void	ft_drawplayerright(t_vars *vars);
 void	ft_drawplayerleft(t_vars *vars);
 void	ft_drawplayerup(t_vars *vars);
 void	ft_drawplayerdown(t_vars *vars);
+int		closewin(t_vars *vars);
 
 #endif

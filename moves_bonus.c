@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:11:06 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/25 12:37:10 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:19:28 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ int	key_hook(int keycode, t_vars *vars)
 	ft_checklose(vars);
 	ft_checkwin(vars);
 	if (keycode == 53)
-	{
-		free(vars->map);
-		exit(1);
-	}
+		closewin(vars);
 	return (0);
 }

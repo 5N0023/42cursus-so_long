@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:37:47 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/25 12:39:27 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:17:35 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@ void	ft_makezero(t_vars *vars)
 	vars->colcount = 0;
 	vars->door = 0;
 	vars->status = 0;
-}	
+}
+
+int	closewin(t_vars *vars)
+{
+	mlx_destroy_window(vars->mlx, vars->win);
+	exit(1);
+	return (0);
+}
 
 int	main(int arg, char *map[])
 {
@@ -38,6 +45,7 @@ int	main(int arg, char *map[])
 	ft_drawmap(&vars);
 	ft_showmoves(&vars);
 	mlx_hook(vars.win, 2, 0, key_hook, &vars);
+	mlx_hook(vars.win, 17, 0, closewin, &vars);
 	mlx_loop(vars.mlx);
 	return (0);
 }

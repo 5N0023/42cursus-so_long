@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 23:41:42 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/26 09:34:57 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:18:45 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ void	ft_moveright(t_vars *vars);
 void	ft_moveleft(t_vars *vars);
 void	ft_movedown(t_vars *vars);
 void	ft_moveup(t_vars *vars);
+int		closewin(t_vars *vars);
 #endif

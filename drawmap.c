@@ -6,7 +6,7 @@
 /*   By: mlektaib <mlektaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 22:08:39 by mlektaib          #+#    #+#             */
-/*   Updated: 2022/11/25 12:24:38 by mlektaib         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:20:55 by mlektaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ void	ft_checkimg(t_vars *vars)
 {
 	if (!vars->img)
 	{
-		free(vars->map);
 		ft_putstr_fd("Eroor !! xpm file deleted \n", 1);
-		exit(1);
+		closewin(vars);
 	}
 }
 
